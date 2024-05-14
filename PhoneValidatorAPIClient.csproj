@@ -1,38 +1,69 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <Nullable>enable</Nullable>
+    <TargetFrameworks>net20;net35;net40;net45;netstandard2.0;netstandard2.1;net6.0</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>APIVerve.API.PhoneValidator</Title>
-    <Version>1.0.0</Version>
+    <Version>1.0.5</Version>
     <Authors>APIVerve</Authors>
     <Company>APIVerve</Company>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <IncludeContentInPack>true</IncludeContentInPack>
+
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
-    <PackageProjectUrl>https://apiverve.com/marketplace/api/phonenumbervalidator</PackageProjectUrl>
+    <PackageProjectUrl>https://apiverve.com/?utm_source=nuget</PackageProjectUrl>
     <SignAssembly>False</SignAssembly>
     <Description>Phone Number Validator is a simple tool for validating if a phone number is valid or not. It checks the phone number format and the country code to see if the phone number is valid.</Description>
-    <RepositoryUrl>https://github.com/apiverve/phonenumbervalidator-NET</RepositoryUrl>
+    <RepositoryUrl>https://github.com/apiverve/phonenumbervalidator.NET-API</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>phone validator; phone number validator; phone number validation; phone number validator api; phone number validation api; phone number validator tool; phone number validation tool; phone number validator software; phone number validation software; phone number validator service; phone number validation service; phone number validator library; phone number validation library; phone number validator sdk; phone number validation sdk; phone number validator code; phone number validation code; phone number validator script; phone number validation script; phone number validator program; phone number validation program; phone number validator application; phone number validation application; phone number validator app; phone number validation app; phone number validator utility; phone number validation utility; phone number validator helper; phone number validation helper; phone number validator helper tool; phone number validation helper tool; phone number validator helper software; phone number validation helper software; phone number validator helper service; phone number validation helper service; phone number validator helper library; phone number validation helper library; phone number validator helper sdk; phone number validation helper sdk; phone number validator helper code; phone number validation helper code; phone number validator helper script; phone number validation helper script; phone number validator helper program; phone number validation helper program; phone number validator helper application; phone number validation helper application; phone number validator helper app; phone number validation helper app; phone number validator helper tool; phone number validation helper tool; phone number validator helper utility; phone number validation helper utility; phone number validator helper</PackageTags>
+    <PackageTags>phone validator; phone number validator; phone number validation; phone number validator api; phone number validation api</PackageTags>
     <Copyright>©2024 APIVerve. All Rights Reserved</Copyright>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <PackageIcon>favicon@128.png</PackageIcon>
+    <BaseOutputPath>.\bin</BaseOutputPath>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <PackageId>APIVerve.API.PhoneValidator</PackageId>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <None Remove="LICENSE" />
+    <None Remove="Readme.md" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="LICENSE">
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Media\favicon@128.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Update="Readme.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>
