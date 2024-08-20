@@ -1,4 +1,4 @@
-Phone Validator API
+Phone Number Validator API
 ============
 
 Phone Number Validator is a simple tool for validating if a phone number is valid or not. It checks the phone number format and the country code to see if the phone number is valid.
@@ -7,7 +7,7 @@ Phone Number Validator is a simple tool for validating if a phone number is vali
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [Phone Validator API](https://apiverve.com/marketplace/api/phonenumbervalidator)
+This is a .NET Wrapper for the [Phone Number Validator API](https://apiverve.com/marketplace/api/phonenumbervalidator)
 
 ---
 
@@ -15,17 +15,17 @@ This is a .NET Wrapper for the [Phone Validator API](https://apiverve.com/market
 
 Using the .NET CLI:
 ```
-dotnet add package APIVerve.API.PhoneValidator
+dotnet add package APIVerve.API.PhoneNumberValidator
 ```
 
 Using the Package Manager:
 ```
-nuget install APIVerve.API.PhoneValidator
+nuget install APIVerve.API.PhoneNumberValidator
 ```
 
 Using the Package Manager Console:
 ```
-Install-Package APIVerve.API.PhoneValidator
+Install-Package APIVerve.API.PhoneNumberValidator
 ```
 
 From within Visual Studio:
@@ -33,8 +33,8 @@ From within Visual Studio:
 1. Open the Solution Explorer.
 2. Right-click on a project within your solution.
 3. Click on Manage NuGet Packages...
-4. Click on the Browse tab and search for "APIVerve.API.PhoneValidator".
-5. Click on the APIVerve.API.PhoneValidator package, select the appropriate version in the right-tab and click Install.
+4. Click on the Browse tab and search for "APIVerve.API.PhoneNumberValidator".
+5. Click on the APIVerve.API.PhoneNumberValidator package, select the appropriate version in the right-tab and click Install.
 
 
 ---
@@ -48,17 +48,17 @@ You can get it by signing up at [https://apiverve.com](https://apiverve.com)
 
 ## Usage
 
-The Phone Validator API documentation is found here: [https://docs.apiverve.com/api/phonenumbervalidator](https://docs.apiverve.com/api/phonenumbervalidator).  
+The Phone Number Validator API documentation is found here: [https://docs.apiverve.com/api/phonenumbervalidator](https://docs.apiverve.com/api/phonenumbervalidator).  
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-Phone Validator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+Phone Number Validator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```
 // Create an instance of the API client
-var apiClient = new PhoneValidatorAPIClient("[YOUR_API_KEY]", true);
+var apiClient = new PhoneNumberValidatorAPIClient("[YOUR_API_KEY]", true);
 ```
 
 ---
@@ -70,7 +70,7 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```
-var queryOptions = new phonenumbervalidatorQueryOptions {
+var queryOptions = new PhoneNumberValidatorQueryOptions {
   number = "816-555-1017",
   country = "us"
 };
@@ -108,7 +108,8 @@ if(response.error != null) {
       "rfc": "tel:+1-816-555-1017",
       "e164": "+18165551017"
     }
-  }
+  },
+  "code": 200
 }
 ```
 
